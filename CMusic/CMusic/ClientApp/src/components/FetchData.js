@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 
 export class FetchData extends Component {
   displayName = FetchData.name
@@ -16,7 +16,7 @@ export class FetchData extends Component {
 
   static renderForecastsTable(forecasts) {
     return (
-      <table className='table'>
+      <table className='table table-bordered'>
         <thead>
           <tr>
             <th>Date</th>
@@ -46,8 +46,8 @@ export class FetchData extends Component {
 
     return (
       <div>
-        <h1>Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server.</p>
+        <h1>Thông tin thời tiêt</h1>
+            <p>Thành phần này thể hiện tìm nạp dữ liệu từ máy chủ.</p>
         {contents}
       </div>
     );
