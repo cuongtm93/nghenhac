@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Home } from './components/Home';
+import { Home } from './components/Body';
 import { NavMenu } from './components/NavMenu';
 
 export default class App extends Component {
-    displayName = App.name
-
+    displayName = App.name;
     render() {
         return (
-            <NavMenu />
+            <div className='App'>
+                <NavMenu />
+                <Home />
+            </div>
         );
     }
 }
