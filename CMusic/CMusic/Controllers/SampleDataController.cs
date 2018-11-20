@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CMusic.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMusic.Controllers
@@ -13,6 +14,13 @@ namespace CMusic.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
+
+        private readonly IHelloService helloService;
+
+        public SampleDataController(IHelloService helloService)
+        {
+            this.helloService = helloService;
+        }
 
         [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
