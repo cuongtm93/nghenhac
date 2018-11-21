@@ -1,13 +1,15 @@
 ﻿import React, { Component } from 'react';
 
-export class Home extends Component {
-  displayName = Home.name
-
+export class Body extends Component {
+  displayName = Body.name;
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <div>
-       Đây là nội dung
-      </div>
+        <div className="content row">
+            {this.props.children}
+     </div>
     );
   }
 }

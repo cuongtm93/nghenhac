@@ -1,0 +1,154 @@
+﻿$size: 12pt;
+$font-size: $size * 1.2;
+$searchbox__textbox__width: 90%;
+$windows_height: 100%;
+$windows_width: 100%;
+$app_background_color: #232924;
+
+body {
+    font-size: $size;
+    /*width : $windows_width;
+    height : $windows_height;*/
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    margin: 1% 2% 0 2%;
+    /*border: 1pt dashed green;*/
+}
+
+.class_fontsize {
+    font-size: $font-size;
+}
+
+.nav__class_height {
+    height: 2 * $font-size;
+}
+
+.nav {
+    @extend .nav__class_height;
+    /*background-color: red;*/
+    @extend .class_fontsize;
+    overflow: hidden;
+}
+
+.content {
+    /*background-color: greenyellow;*/
+    @extend .class_fontsize;
+    clear: both;
+}
+
+.row__left {
+    /*background-color: blue;*/
+}
+
+.row__right {
+    /*background-color: yellow;*/
+}
+
+.nav__menu_item {
+    padding-top: 0.3em;
+    width: 20%;
+    float: left;
+    background-color: $app_background_color;
+    /*border: 1pt solid red;*/
+    @extend .nav__class_height;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+
+    &:hover {
+        background-color: #0f5f1c;
+        color: #f9f9f8;
+        cursor: pointer;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.searchbox {
+    width: 50%;
+    margin: 0.5em auto;
+    height: 2em;
+}
+
+.searchbox__class {
+    height: 100%;
+    float: left;
+}
+
+$searchbox__textbox__border_radius: 0.8em;
+
+.searchbox__textbox {
+    @extend .searchbox__class;
+    width: $searchbox__textbox__width;
+    border-radius: $searchbox__textbox__border_radius 0 0 $searchbox__textbox__border_radius;
+    padding: $searchbox__textbox__border_radius;
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.searchbox__button {
+    width: 100% - $searchbox__textbox__width;
+    @extend .searchbox__class;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+}
+
+@media screen and (max-width : 800px) {
+    .searchbox__textbox {
+        width: 100%;
+    }
+
+    .searchbox__button {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .nav {
+        height: auto;
+    }
+
+    .nav__menu_item {
+        width: 100%;
+        display: block;
+        float: left;
+        clear: both;
+
+        a {
+            text-decoration: none !important;
+            color : white !important;
+            &:hover , &:focus  {
+                text-decoration: none !important;
+            }
+        }
+    }
+}
+
+.__footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-left: 0.02 * $windows_width;
+    width: 0.96 * $windows_width;
+    height: 3em;
+    background-color: $app_background_color;
+    color: white;
+    /*text-align: center;*/
+}
